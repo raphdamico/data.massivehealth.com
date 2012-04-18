@@ -4,289 +4,320 @@
 
 <head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>PageScroller: A Simple Page Scrolling Plugin</title>
-	<link rel="stylesheet" href="./stylesheets/style.css" type="text/css" media="all" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="./js/pagescroller.min.js"></script>
-	<script type="text/javascript" src="./js/underscore.js"></script>
-	<script type="text/javascript" src="./js/backbone.js"></script>
-	<!--<script type="text/javascript" src="./js/jquery.parallax.js"></script>-->
-	<script type="text/javascript">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>PageScroller: A Simple Page Scrolling Plugin</title>
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/pagescroller.min.js"></script>
+    <script type="text/javascript" src="./js/underscore.js"></script>
+    <script type="text/javascript" src="./js/backbone.js"></script>
+    <!--<script type="text/javascript" src="./js/jquery.parallax.js"></script>-->
+    <script type="text/javascript">
 
-	$(document).ready(function(){
+    $(document).ready(function(){
 
-		////////////////////////////////////////////////////////////////////////////////////
-		// Infographics data
-		//
-		//
-		var infographics = {
-			perception: {
-				filename: 'info_perception.jpg',
-				patch: 'info_perception_patch.jpg',
-				banner: [
-					{ filename: 'Perception-01.png', 		top: '-40px', 	left: '-40px', parallax: 'A' },
-					{ filename: 'Perception-02-guy.png', 	top: '-40px', 	left: '76%', parallax: 'B' },
-					{ filename: 'Perception-02-mirror.png', top: '-40px', 	left: '76%', parallax: 'A' },
-					{ filename: 'Perception-03.png', 		top: '-200px', 	left: '54%', parallax: 'C' }
-				],
-				sections: [
-					{ height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-					{ height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-					{ height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-				]
-			},
-			what: {
-				filename: 'info_whatweeat.jpg',
-				patch: 'info_whatweeat_patch.jpg',
-				banner: [
-					{ filename: 'Perception-02-guy.png', 		top: '0px', 	left: '20px', parallax: 'A' },
-					{ filename: 'Perception-02-mirror.png', 	top: '-40px', 	left: '78%', parallax: 'B' },
-					{ filename: 'Perception-03.png', top: '-40px', 	left: '78%', parallax: 'A' },
-					{ filename: 'Perception-03.png', 		top: '-200px', 	left: '56%', parallax: 'C' }
-				],
-				sections: [
-					{ height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-					{ height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-					{ height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-				]
-			},
-			where: {
-				filename: 'info_whereweeat.jpg',
-				patch: 'info_whereweeat_patch.jpg',
-				banner: [
-					{ filename: 'Perception-02-guy.png', 		top: '0px', 	left: '20px', parallax: 'A' },
-					{ filename: 'Perception-02-mirror.png', 	top: '-40px', 	left: '78%', parallax: 'B' },
-					{ filename: 'Perception-03.png', top: '-40px', 	left: '78%', parallax: 'A' },
-					{ filename: 'Perception-03.png', 		top: '-200px', 	left: '56%', parallax: 'C' }
-				],
-				sections: [
-					{ height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-					{ height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-					{ height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-				]
-			},
-			when: {
-				filename: 'info_whenweeat.jpg',
-				patch: 'info_whenweeat_patch.jpg',
-				banner: [
-					{ filename: 'Perception-02-guy.png', 		top: '0px', 	left: '20px', parallax: 'A' },
-					{ filename: 'Perception-02-mirror.png', 	top: '-40px', 	left: '78%', parallax: 'B' },
-					{ filename: 'Perception-03.png', top: '-40px', 	left: '78%', parallax: 'A' },
-					{ filename: 'Perception-03.png', 		top: '-200px', 	left: '56%', parallax: 'C' }
-				],
-				sections: [
-					{ height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-					{ height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-					{ height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-				]
-			},
-			friends: {
-				filename: 'info_eatingiscontagious.jpg',
-				patch: 'info_eatingiscontagious_patch.jpg',
-				banner: [
-					{ filename: 'Perception-02-guy.png', 		top: '0px', 	left: '20px', parallax: 'A' },
-					{ filename: 'Perception-02-mirror.png', 	top: '-40px', 	left: '78%', parallax: 'B' },
-					{ filename: 'Perception-03.png', top: '-40px', 	left: '78%', parallax: 'A' },
-					{ filename: 'Perception-03.png', 		top: '-200px', 	left: '56%', parallax: 'C' }
-				],
-				sections: [
-					{ height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-					{ height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-					{ height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-					{ height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-				]
-			}
-		};
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Infographics data
+        //
+        //
+        var infographics = {
+            perception: {
+                filename: 'info_perception.jpg',
+                patch: 'info_perception_patch.jpg',
+                banner: [
+                    { filename: 'Perception-01.png',        top: '-40px',   left: '-40px', parallax: 'A' },
+                    { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%', parallax: 'B' },
+                    { filename: 'Perception-02-mirror.png', top: '-40px',   left: '76%', parallax: 'A' },
+                    { filename: 'Perception-03.png',        top: '-200px',  left: '54%', parallax: 'C' }
+                ],
+                sections: [
+                    { height:  650, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ]
+            },
+            what: {
+                filename: 'info_whatweeat.jpg',
+                patch: 'info_whatweeat_patch.jpg',
+                banner: [
+                    { filename: 'banner_what4.png', top: '-70px',  left: '-9%', parallax: 'A' },
+                    { filename: 'banner_what1.png', top: '310px',     left: '71%', parallax: 'B' },
+                    { filename: 'banner_what3.png', top: '285px',  left: '93.5%', parallax: 'B' },
+                    { filename: 'banner_what2.png', top: '310px',   left: '70.5%', parallax: 'C' }
+                ],
+                sections: [
+                    { height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ]
+            },
+            where: {
+                filename: 'info_whereweeat.jpg',
+                patch: 'info_whereweeat_patch.jpg',
+                banner: [
+                    { filename: 'banner_whereTitle.png',        top: '-80px',     left: '0px', parallax: 'C' },
+                    { filename: 'banner_whereHalo.png',         top: '-80px',     left: '0px', parallax: 'B' },
+                    { filename: 'banner_whereBigheadBack.png',  top: '-80px',     left: '0px', parallax: 'A' },
+                    { filename: 'banner_whereMoustache.png',    top: '-80px',     left: '0px', parallax: 'B' },
+                    { filename: 'banner_whereBigheadFront.png', top: '-80px',     left: '0px', parallax: 'A' }
 
+                ],
+                sections: [
+                    { height:  850, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ]
+            },
 
-		////////////////////////////////////////////////////////////////////////////////////
-		// Globals
-		//
-		//
-		var navLabel = new Array('1', '2', "3", '4', '5', '6', '7', '8', '9', '10');
-		var cumulHeight = 0;
-		var curInfographic = '';
-		var INFOGRAPHIC = infographics[curInfographic];
-		var sectionHeight = 0;
-
-		var $main = $('#main');
-		var $wrapper = $('#wrapper');
-		var $banner = $('#banner_main');
-		var imgPATH = 'images/'
-
-		////////////////////////////////////////////////////////////////////////////////////
-		// Create sections
-		//
-		//
-
-		function createInfographicPage(aInfographic) {
-			curInfographic = aInfographic;
-			INFOGRAPHIC = infographics[aInfographic];
-
-			$banner.fadeOut('fast').html('');
-			$main.fadeOut('fast', function() {
-				$main.html('');
-
-				// Create banner
-				var _bn = INFOGRAPHIC.banner;
-				for (var i=0; i<_bn.length; i++) {
-					$('<div class="banner-item parallax'+_bn[i].parallax+'"><img id="'+curInfographic+'-'+i+'" src="'+imgPATH+_bn[i].filename+'"/></div>').appendTo($banner).css({'margin-left': _bn[i].left, 'margin-top': _bn[i].top});
-				}
-
-				// Create image
-				$main.append('<div id="image"><div id="image_frame"></div><div id="image_container"><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
-
-				// Create sections
-				for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
-					if (i === 0) { sectionHeight = INFOGRAPHIC.sections[i].height; }
-					else { sectionHeight = INFOGRAPHIC.sections[i].height - INFOGRAPHIC.sections[i-1].height; }
-					$main.append('<div class="section" style="height: '+ sectionHeight +'px"></div>');
-				}
-				$main.append('<div class="section" style="height: 500px"><div class="shareThis">SHARE THIS</div></div>');
-				$main.pageScroller({ navigation: navLabel, scrollOffset: 200, onChange: changeSection });
-
-				// assigns "next" API function to button
-				$('.next').live('click', function(e){
-					e.preventDefault();
-					pageScroller.next();
-				});
-
-				//assigns "prev" API function to button
-				$('.prev').live('click', function(e){
-					e.preventDefault();
-					pageScroller.prev();
-				});
-
-				$banner.fadeIn();
-				$main.fadeIn();
-			});
-		}
-
-		/*	AVAILABLE OPTIONS:
-		 *	currentSection 				starting position
-		 *	sectionClass				class of each section
-		 *	navigationClass 			navigation element class
-		 *	scrollOffset				offset target area from top of section
-		 *	animationSpeed	 			change duration of animation in miliseconds
-		 *	animationBefore 		 	callback: assign a function before animation
-		 *	animationComplete 	 		callback: assign a function after animation
-		 *	onChange					callback: assign a function for when section changes
-		*/
-
-		function changeSection(e) {
-			var scrollY = window.scrollY;
-			var newColor = function ratchet() {
-				for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
-					if (scrollY <= INFOGRAPHIC.sections[i].height) {
-						return INFOGRAPHIC.sections[i].color;
-					}
-				}
-			}();
-			$wrapper.css({'backgroundColor': newColor});
-			//console.log('changed section', scrollY, newColor);
-		};
-
-		window.createInfographicPage = createInfographicPage;
-
-		////////////////////////////////////////////////////////////////////////////////////
-		// Setup page
-		//
-		//
-
-		// Start router
-		var App = Backbone.Router.extend({
-
-		  routes: {
-		    "help":                 "help",    // #help
-		    "search/:query":        "search",  // #search/kiwis
-		    "search/:query/p:page": "search"   // #search/kiwis/p7
-		  },
-
-		  help: function() {
-
-		  },
-
-		  search: function(query, page) {
-		    console.log('asdfsd');
-		  }
-
-		});
-		window.app = new App();
-		Backbone.history.start({pushState: true})
+            when: {
+                filename: 'info_whenweeat.jpg',
+                patch: 'info_whenweeat_patch.jpg',
+                banner: [
+                    { filename: 'banner_whenTitle.png',     top: '-90px',     left: '-20px', parallax: 'B' },
+                    { filename: 'banner_whenGuys.png',      top: '-150px',     left: '-20px', parallax: 'A' },
+                    { filename: 'banner_whenCurtain.png',   top: '500px',     left: '-80px', parallax: 'A' },
+                    { filename: 'banner_whenFoodBack.png',  top: '-150px',     left: '-20px', parallax: 'B' },
+                    { filename: 'banner_whenFoodFront.png', top: '-150px',     left: '-20px', parallax: 'C' }
+                ],
+                sections: [
+                    { height:  660, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ]
+            },
+            friends: {
+                filename: 'info_eatingiscontagious.jpg',
+                patch: 'info_eatingiscontagious_patch.jpg',
+                banner: [
+                    { filename: 'banner_whoTitle.png',      top: '-90px',     left: '-20px', parallax: 'A' },
+                    { filename: 'banner_whoPeeps.png',     top: '-90px',     left: '-20px', parallax: 'B' },
+                    { filename: 'banner_whenCurtain.png',   top: '540px',     left: '-80px', parallax: 'B' },
+                    { filename: 'banner_whoFood.png',      top: '-90px',     left: '-20px', parallax: 'C' },
+                ],
+                sections: [
+                    { height:  650, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ]
+            }
+        };
 
 
-		createInfographicPage('perception');
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Globals
+        //
+        //
 
-		var $topNav = $('.topNav');
-		$(window).scroll(function(e) {
-			var scrollY = e.currentTarget.scrollY;
-			if (scrollY > 700) {
-				$topNav.css({opacity: 0.5});
-			}
-			else {
-				$topNav.css({opacity: 1});
-			}
-			console.log(e.currentTarget.scrollY);
-		});
+        window.app = {};
+
+        var navLabel = new Array('1', '2', "3", '4', '5', '6', '7', '8', '9', '10');
+        var cumulHeight = 0;
+        var curInfographic = '';
+        var INFOGRAPHIC = infographics[curInfographic];
+        var sectionHeight = 0;
+
+        var $main = $('#main');
+        var $wrapper = $('#wrapper');
+        var $banner = $('#banner_main');
+        var imgPATH = '../images/'
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Create sections
+        //
+        //
+
+        function createInfographicPage(aInfographic) {
+            curInfographic = aInfographic;
+            INFOGRAPHIC = infographics[aInfographic];
+
+            $banner.fadeOut('fast').html('');
+            $main.fadeOut('fast', function() {
+                $wrapper.html('').append('<div id="main"></div>');
+                $main = $('#main');
+
+                // Create banner
+                var _bn = INFOGRAPHIC.banner;
+                for (var i=0; i<_bn.length; i++) {
+                    $('<div class="banner-item parallax'+_bn[i].parallax+'"><img id="'+curInfographic+'-'+i+'" src="'+imgPATH+_bn[i].filename+'"/></div>').appendTo($banner).css({'margin-left': _bn[i].left, 'margin-top': _bn[i].top});
+                }
+
+                // Create image
+                $main.append('<div id="image"><div id="image_frame"></div><div id="image_container"><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
+                $('#image').css({'padding-top': INFOGRAPHIC.sections[0].height});
+                $('#image img').css({'margin-top': -INFOGRAPHIC.sections[0].height});
+
+                // Create sections
+                for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
+                    if (i === 0) { sectionHeight = INFOGRAPHIC.sections[i].height; }
+                    else { sectionHeight = INFOGRAPHIC.sections[i].height - INFOGRAPHIC.sections[i-1].height; }
+                    $main.append('<div class="section" style="height: '+ sectionHeight +'px"></div>');
+                }
+                $main.append('<div class="section" style="height: 500px"><div class="shareThis">SHARE THIS</div></div>');
+
+                $main.pageScroller({ navigation: navLabel, scrollOffset: 200, onChange: changeSection });
+
+                // assigns "next" API function to button
+                $('.next').live('click', function(e){
+                    e.preventDefault();
+                    pageScroller.next();
+                });
+
+                //assigns "prev" API function to button
+                $('.prev').live('click', function(e){
+                    e.preventDefault();
+                    pageScroller.prev();
+                });
+
+                $banner.fadeIn();
+                $main.fadeIn();
+            });
+        }
+
+        /*  AVAILABLE OPTIONS:
+         *  currentSection              starting position
+         *  sectionClass                class of each section
+         *  navigationClass             navigation element class
+         *  scrollOffset                offset target area from top of section
+         *  animationSpeed              change duration of animation in miliseconds
+         *  animationBefore             callback: assign a function before animation
+         *  animationComplete           callback: assign a function after animation
+         *  onChange                    callback: assign a function for when section changes
+        */
+
+        function changeSection(e) {
+            var scrollY = window.scrollY;
+            var newColor = function ratchet() {
+                for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
+                    if (scrollY <= INFOGRAPHIC.sections[i].height) {
+                        return INFOGRAPHIC.sections[i].color;
+                    }
+                }
+            }();
+            $wrapper.css({'backgroundColor': newColor});
+            //console.log('changed section', scrollY, newColor);
+        };
+
+        window.app.createInfographicPage = createInfographicPage;
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Setup page
+        //
+        //
+
+        // Start router
+        var App = Backbone.Router.extend({
+
+          routes: {
+            "":                     "home",    // #help
+            'infographic/:name': 'infographic'
+          },
+          home: function() {
+            app.navigate('/infographic/where', {trigger: true});
+          },
+          infographic: function(name) {
+            //app.navigate('/#infographic/'+name, {trigger: true});
+            createInfographicPage(name);
+            console.log('infographic', name);
+          }
+
+        });
+        window.app = new App();
+        Backbone.history.start({pushState: true})
+
+        //createInfographicPage('perception');
+
+        var $topNav = $('.topNav');
+        $(window).scroll(function(e) {
+            var scrollY = e.currentTarget.scrollY;
+            if (scrollY > 700) {
+                $topNav.css({opacity: 0.5});
+            }
+            else {
+                $topNav.css({opacity: 1});
+            }
+            console.log(e.currentTarget.scrollY);
+        });
 
 
-		$(window).mousemove(function(e) {
-			if (window.scrollY < 1000) {
-			var newValue = (window.innerWidth/2 - e.pageX) / window.innerWidth;
-				$('.parallaxA').css({'-webkit-transform': 'translate3d('+ (newValue * 5) +'px, 0px, 0px)'})
-				$('.parallaxB').css({'-webkit-transform': 'translate3d('+ (newValue * 20) +'px, 0px, 0px)'})
-				$('.parallaxC').css({'-webkit-transform': 'translate3d('+ (newValue * 50) +'px, 0px, 0px)'})
-			}
-		});
+        $(window).mousemove(function(e) {
+            if (window.scrollY < 1000) {
+            var newValue = (window.innerWidth/2 - e.pageX) / window.innerWidth;
+                $('.parallaxA').css({'-webkit-transform': 'translate3d('+ (newValue * 5) +'px, 0px, 0px)'})
+                $('.parallaxB').css({'-webkit-transform': 'translate3d('+ (newValue * 20) +'px, 0px, 0px)'})
+                $('.parallaxC').css({'-webkit-transform': 'translate3d('+ (newValue * 50) +'px, 0px, 0px)'})
+            }
+        });
 
+          // All navigation that is relative should be passed through the navigate
+          // method, to be processed by the router.  If the link has a data-bypass
+          // attribute, bypass the delegation completely.
+          $(document).on("click", "a:not([data-bypass])", function(evt) {
+            // Get the anchor href and protcol
+            var href = $(this).attr("href");
+            var protocol = this.protocol + "//";
 
-	});
+            // Ensure the protocol is not part of URL, meaning its relative.
+            if (href && href.slice(0, protocol.length) !== protocol &&
+                href.indexOf("javascript:") !== 0) {
+              // Stop the default event to ensure the link will not cause a page
+              // refresh.
+              evt.preventDefault();
 
-	</script>
+              // `Backbone.history.navigate` is sufficient for all Routers and will
+              // trigger the correct events.  The Router's internal `navigate` method
+              // calls this anyways.
+              Backbone.history.navigate(href, true);
+            }
+          });
+
+    });
+
+    </script>
 
 </head>
 
 <body>
 
-	<div id="controls" class="light">
-		<a href="#" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
-		<a href="#" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
-	</div>
+    <div id="controls" class="light">
+        <a href="" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
+        <a href="" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
+    </div>
 
-	<div id="banner_wrapper">
-		<div id="banner_main">
+    <div id="banner_wrapper">
+        <div id="banner_main">
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<div id="wrapper" class="dark">
-		<div id="main">
-			<!-- <div id="image"><div id="image_frame"></div><div id="image_container"><img src='images/MH_Perceptionv3_960.jpg'/></div></div> -->
-		</div><!-- [END] #main -->
-	</div><!-- [END] #wrapper -->
+    <div id="wrapper" class="dark">
+        <div id="main">
+            <!-- <div id="image"><div id="image_frame"></div><div id="image_container"><img src='images/MH_Perceptionv3_960.jpg'/></div></div> -->
+        </div><!-- [END] #main -->
+    </div><!-- [END] #wrapper -->
 
-	<div id='footer'> </div>
+    <div id='footer'> </div>
 
 <div class="topNav white">
-	<ul style="display: block; ">
-		<li class="topNavLink topNavLink_1 active"><a href="#pageScroll0">Introduction</a></li>
-		<li class="topNavLink topNavLink_2"><a href="#pageScroll1">How It Works</a></li>
-		<li class="topNavLink topNavLink_3"><a href="#pageScroll2">What's Included?</a></li>
-		<li class="topNavLink topNavLink_4"><a href="#pageScroll3">Documentation</a></li>
-		<li class="topNavLink topNavLink_5"><a href="#pageScroll4">Download Plugin</a></li>
-		<li class="colors white">
-	</ul>
+    <ul style="display: block; ">
+        <li class="topNavLink topNavLink_0 active"><a href="#">Introduction</a></li>
+        <li class="topNavLink topNavLink_1"><a href="#infographic/perception">Perception</a></li>
+        <li class="topNavLink topNavLink_2"><a href="#infographic/what">What</a></li>
+        <li class="topNavLink topNavLink_3"><a href="#infographic/where">Where</a></li>
+        <li class="topNavLink topNavLink_4"><a href="#infographic/when">When</a></li>
+        <li class="topNavLink topNavLink_5"><a href="#infographic/friends">Friends</a></li>
+        <li class="colors white">
+    </ul>
 </div>
 
 </body><!-- [END] body -->
