@@ -291,15 +291,20 @@ ul.unstyled {
 .shareThis {
 
 }
+/************************************************************/
+/*	PARALLAX (topNav)
+/************************************************************/
+.parallaxA, .parallaxB, .parallaxC {z-index: 100;}
+
 
 /************************************************************/
 /*	BANNER (banner_)
 /************************************************************/
 
 #banner_wrapper {
+	z-index: 100;
 	pointer-events: none;
 	position: absolute;
-	z-index: 100;
 	width: 100%;
 	margin-top: 160px;
 	height: 600px;
@@ -320,18 +325,16 @@ ul.unstyled {
 .banner-item {
 	position: absolute;
 }
-
-/************************************************************/
-/*	PARALLAX (topNav)
-/************************************************************/
-.parallaxA {z-index: 0;}
-
+.bannerInFront {
+	z-index: 150;
+}
 /************************************************************/
 /*	TOPNAV (topNav)
 /************************************************************/
 
 .topNav:hover { opacity: 0.9 !important;}
 .topNav{
+	z-index: 120;
 	opacity: 0.9 !important;
 	position: fixed !important;
 	width: 100%;
