@@ -172,10 +172,11 @@ ul.unstyled {
 /************************************************************/
 
 .intro_title {
-	font-size: 30px;
-	color: #ccc;
-	position: absolute;
-	height: 800px;
+	font-size: 40px;
+	color: white;
+	/*position: absolute;*/
+	margin-top: 80px;
+	margin-bottom: 20px;
 	pointer-events: none;
 }
 
@@ -222,7 +223,6 @@ ul.unstyled {
 	overflow: hidden;
 	border: 10px solid white;
 	margin-left: 70px;
-	margin-top: 210px;
 }
 .intro_map_overlay {
 	margin-top: -65px;
