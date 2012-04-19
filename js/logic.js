@@ -182,7 +182,7 @@ $(document).ready(function(){
             }
 
             // Add sharing box
-            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="image_frame"></div><div id="image_container"><div class="shareThis">© Copyright 2012 Massive Health. All Rights Reserved.</div></div>');
+            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;top:-75px;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
 
 
             $banner.show();
