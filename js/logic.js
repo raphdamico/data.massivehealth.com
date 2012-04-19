@@ -9,7 +9,7 @@ $(document).ready(function(){
             filename: 'info_perception.jpg',
             patch: 'info_perception_patch.jpg',
             banner: [
-                { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'Z' },
+                { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'A' },
                 { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%', parallax: 'B' },
                 { filename: 'Perception-02-mirror.png', top: '-40px',   left: '76%', parallax: 'A' },
                 { filename: 'Perception-03.png',        top: '-200px',  left: '54%', parallax: 'C' }
@@ -363,7 +363,7 @@ $(document).ready(function(){
             transformC = {};
 
             for (var i=0; i<prefixes.length; i++) {
-                transformA[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 5) +'px, 0px, 0px)';
+                transformA[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 5) +'px, 0px, 0px)';
                 transformB[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 20) +'px, 0px, 0px)';
                 transformC[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 50) +'px, 0px, 0px)';
             }
