@@ -6,7 +6,7 @@ $(document).ready(function(){
     //
     var infographics = {
         perception: {
-            filename: 'info_perception.jpg',
+            filename: 'info_perception.png',
             patch: 'patch_perception.jpg',
             patchOffset: -35,
             banner: [
@@ -26,7 +26,7 @@ $(document).ready(function(){
             offset: 160
         },
         what: {
-            filename: 'info_whatweeat.jpg',
+            filename: 'info_whatweeat.png',
             patch: 'patch_what.jpg',
             patchOffset:-17,
             banner: [
@@ -46,7 +46,7 @@ $(document).ready(function(){
             offset: 260
         },
         where: {
-            filename: 'info_whereweeat.jpg',
+            filename: 'info_whereweeat.png',
             patch: 'patch_where.jpg',
             patchOffset: -26,
             banner: [
@@ -69,7 +69,7 @@ $(document).ready(function(){
         },
 
         when: {
-            filename: 'info_whenweeat.jpg',
+            filename: 'info_whenweeat.png',
             patch: '',
             patchOffset: 0,
             banner: [
@@ -91,7 +91,7 @@ $(document).ready(function(){
             offset: 0
         },
         friends: {
-            filename: 'info_eatingiscontagious.jpg',
+            filename: 'info_eatingiscontagious.png',
             patch: '',
             patchOffset: 0,
             banner: [
