@@ -355,18 +355,26 @@ $(document).ready(function(){
         if (e.pageY < 820) {
             var newValue = (e.pageX) / window.innerWidth;
             var newHour = Math.floor(newValue * 24);
-            var timeOffset = -8; // London to San Fran
+
+            var timeZoneOffset = -8; //London to San Francisco
+            var desiredStartTime = 4;
+
+            var timeOffset = timeZoneOffset - desiredStartTime;
             var adjustedHour = newHour + timeOffset;
             if (adjustedHour > 23) { adjustedHour = adjustedHour - 24; }
             if (adjustedHour < 0) { adjustedHour = 24 + adjustedHour; }
 
-            if (hour !== newHour) {
-                $('#map_overlay_hour_'+newHour).show();
+            var timeZoneHour = adjustedHour + timeZoneOffset;
+            if (timeZoneHour > 23) { timeZoneHour = timeZoneHour - 24; }
+            if (timeZoneHour < 0) { timeZoneHour = 24 + timeZoneHour; }
+
+            if (hour !== adjustedHour) {
+                $('#map_overlay_hour_'+adjustedHour).show();
                 $('#map_overlay_hour_'+hour).hide();
-                hour = newHour;
-                $('.intro_time_output').text(hour + ':00');
+                hour = adjustedHour;
+                $('.intro_time_output').text(timeZoneHour + ':00');
             }
-            $('#map_overlay_darkness').css({'background-position': ((newValue+(-6/24)) * 800) + 'px -20px' });
+            $('#map_overlay_darkness').css({'background-position': ((newValue+(timeOffset/24)) * -800) + 'px -20px' });
         }
         // $('#map_overlay_hour_'+hour).css({'-webkit-transform': 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)' });
         //document.getElementById('map_overlay_darkness').style.webkitTransform = 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)';
