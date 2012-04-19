@@ -355,7 +355,7 @@ $(document).ready(function(){
             $('.parallaxC').css(transformC);
         }
         if (e.pageY < 820) {
-            var newValue = (e.pageX) / window.innerWidth;
+            var newValue = 3*((1 - (e.pageX / window.innerWidth)))%1;
             var newHour = Math.floor(newValue * 24);
 
             var timeZoneOffset = -8; //London to San Francisco
