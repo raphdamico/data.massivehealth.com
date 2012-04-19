@@ -455,6 +455,12 @@ ul.unstyled {
 	background-color: rgba(255,255,255,.4);
 }
 
+.nav_mh>a {
+	background: url('../images/mh.png') no-repeat 8px 3px;
+	width: 16px;
+}
+
+
 .nav_right {
 	float: right;
 }
