@@ -238,6 +238,9 @@ ul.unstyled {
 .map_overlay_hour {
 	display: none;
 }
+#map_overlay_hour_12 {
+	display: block;
+}
 .intro_bottom {
 	/*position: fixed;
 	bottom: 0px;*/
