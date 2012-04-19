@@ -7,7 +7,8 @@ $(document).ready(function(){
     var infographics = {
         perception: {
             filename: 'info_perception.jpg',
-            patch: 'info_perception_patch.jpg',
+            patch: 'patch_perception.jpg',
+            patchOffset: -35,
             banner: [
                 { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'A' },
                 { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%', parallax: 'B' },
@@ -26,7 +27,8 @@ $(document).ready(function(){
         },
         what: {
             filename: 'info_whatweeat.jpg',
-            patch: 'info_whatweeat_patch.jpg',
+            patch: 'patch_what.jpg',
+            patchOffset:-17,
             banner: [
                 { filename: 'banner_what4.png', top: '-70px',  left: '-9%', parallax: 'A' },
                 { filename: 'banner_what1.png', top: '310px',     left: '71%', parallax: 'B' },
@@ -45,7 +47,8 @@ $(document).ready(function(){
         },
         where: {
             filename: 'info_whereweeat.jpg',
-            patch: 'info_whereweeat_patch.jpg',
+            patch: 'patch_where.jpg',
+            patchOffset: -26,
             banner: [
                 { filename: 'banner_whereTitle.png',        top: '-80px',     left: '0px', parallax: 'C' },
                 { filename: 'banner_whereHalo.png',         top: '-80px',     left: '0px', parallax: 'B' },
@@ -67,7 +70,8 @@ $(document).ready(function(){
 
         when: {
             filename: 'info_whenweeat.jpg',
-            patch: 'info_whenweeat_patch.jpg',
+            patch: '',
+            patchOffset: 0,
             banner: [
                 { filename: 'banner_whenTitle.png',     top: '-90px',     left: '-20px', parallax: 'B' },
                 { filename: 'banner_whenGuys.png',      top: '-150px',     left: '-20px', parallax: 'A' },
@@ -88,7 +92,8 @@ $(document).ready(function(){
         },
         friends: {
             filename: 'info_eatingiscontagious.jpg',
-            patch: 'info_eatingiscontagious_patch.jpg',
+            patch: '',
+            patchOffset: 0,
             banner: [
                 { filename: 'banner_whoTitle.png',      top: '-90px',     left: '-20px', parallax: 'A' },
                 { filename: 'banner_whoPeeps.png',     top: '-90px',     left: '-20px', parallax: 'B' },
@@ -161,9 +166,10 @@ $(document).ready(function(){
             }
 
             // Create image
-            $main.append('<div id="image"><div class="image_frame"></div><div id="image_container"><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
+            $main.append('<div id="image"><div class="image_frame"></div><div id="image_container"><div id="patch"></div><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
             $('#image').css({'padding-top': INFOGRAPHIC.sections[0].height});
             $('#image img').css({'margin-top': -INFOGRAPHIC.sections[0].height + INFOGRAPHIC.offset});
+            $('#patch').css({'background-position': '0 '+INFOGRAPHIC.patchOffset+'px', 'background-image': "url('"+(imgPATH+INFOGRAPHIC.patch)+"')" });
 
             // Create sections
             $pageScroll.html('');

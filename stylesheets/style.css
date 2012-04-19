@@ -287,6 +287,12 @@ ul.unstyled {
 	margin-top: -40px;
 	background-image: url('../images/woodTop.png');
 }
+#patch {
+	position: absolute;
+	height: 80px;
+	width: 960px;
+	background-repeat: no-repeat;
+}
 
 .shareThis {
 
