@@ -272,7 +272,7 @@ ul.unstyled {
 	font-size: 11px;
 	background-color: white;
 	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
-	-webkit-transition: -webkit-transform 0.2s ease-in-out;
+	-webkit-transition: -webkit-transform 0.1s ease-out;
 }
 .intro_infographic_mini.last {
 	padding-right: 0 !important;
