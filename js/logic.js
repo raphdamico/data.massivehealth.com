@@ -9,7 +9,7 @@ $(document).ready(function(){
             filename: 'info_perception.jpg',
             patch: 'info_perception_patch.jpg',
             banner: [
-                { filename: 'Perception-01.png',        top: '-40px',   left: '-40px', parallax: 'A' },
+                { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'Z' },
                 { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%', parallax: 'B' },
                 { filename: 'Perception-02-mirror.png', top: '-40px',   left: '76%', parallax: 'A' },
                 { filename: 'Perception-03.png',        top: '-200px',  left: '54%', parallax: 'C' }
