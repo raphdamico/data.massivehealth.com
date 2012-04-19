@@ -136,7 +136,6 @@ $(document).ready(function(){
     var $banner = $('#banner_main');
     var $pageScroll = $('#pageScroll');
     var $topNav = $('.topNav');
-    var $controls = $('#controls');
 
     var imgPATH = '../images/'
 
@@ -188,7 +187,6 @@ $(document).ready(function(){
 
             $banner.fadeIn();
             $main.fadeIn();
-            $controls.fadeIn();
 
             $.pageScroll({
                 target: $('.section0'),
@@ -208,7 +206,6 @@ $(document).ready(function(){
         // Update nav bar
         $('.nav_'+lastInfographic).removeClass('active');
         $('.nav_'+curInfographic).addClass('active');
-        $controls.fadeOut();
 
         $banner.fadeOut('fast').html('');
         $main.fadeOut('fast', function() {
@@ -323,7 +320,6 @@ $(document).ready(function(){
 
     $(window).scroll(function(e) {
         var scrollY = e.currentTarget.scrollY;
-        console.log(scrollY);
         var getSection = function () {
             for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
                 if (scrollY <= INFOGRAPHIC.sections[i].height - 40) {
@@ -331,29 +327,8 @@ $(document).ready(function(){
                 }
             }
         };
-        // Fire change section function if we changed section
-        /*var newSection = getSection();
-        if (newSection !== currentSection) {
-            changeSection(newSection);
-        }*/
     });
 
-    /*function changeSection(aNewSection) {
-        newSection = aNewSection || 0;
-        prevSection = currentSection;
-        currentSection = newSection;
-
-        // Change color
-        oldColor = INFOGRAPHIC.sections[prevSection].color;
-        newColor = INFOGRAPHIC.sections[currentSection].color;
-
-        if (oldColor !== newColor) {
-            //$wrapper.css({'backgroundColor': newColor});
-        }
-
-        if (aNewSection !== 0) { $topNav.css({opacity: 0.5}); $controls.css({opacity: 0.25}); }
-        else { $topNav.css({opacity: 0.9}); $controls.css({opacity: 0.9}); }
-    };*/
 
     ////////////////////////////////////////////////////////////////////////////////////
     // Parallax
