@@ -20,8 +20,8 @@
     <script type="text/template" id="intro-page">
         <div id='main'>
             <div class='intro_title'>
-                <div id='map' class='parallaxA'>
-                    <div id='map_overlay_landmass' class='intro_map_overlay' style="background-image: url('../images/map800/map.png'); background-position: 0px -20px;"></div>
+                <div id='map'>
+                    <div id='map_overlay_landmass' class='intro_map_overlay' style="background-image: url('../images/map800/map.png'); background-position: 0px -10px;"></div>
                     <div id='map_overlay_darkness' class='intro_map_overlay map_overlay_darkness' style="background-image: url('../images/map800/darkness.png');"></div>
                     <% for (var i=0; i<24; i++) {
                         if (i<10) { j = '0' + i; }
@@ -29,17 +29,12 @@
                         %>
                     <div id='map_overlay_hour_<%=i%>' class='intro_map_overlay map_overlay_hour' style="background-image: url('../images/map800/<%=j%>_hour.png');"></div>
                     <% } %>
-                    <div class='section map_label_bottom'> Eating healthiness over 24 hours</br> <em>Visualization of over 500,000 foods</em> </div>
-                    <div class='section map_label_top'> <div class='intro_time_output'>9:35</div> in London </div>
+                    <div class='section map_label_bottom'> Eating healthiness over 24 hours</br><span class='map_label_emphasis'><em>Visualization of over 500,000 foods</em></span>  </div>
+                    <div class='section map_label_top'> <div class='intro_time_output'>9:35</div> in San Francisco </div>
                 </div>
             </div>
 
             <div class="section intro_bottom">
-                <a href='#infographic/perception'>
-                    <div class='section next_button intro_next parallaxB'>
-                        <img src="./images/icon_arrow-right.png" alt="" width="28" height="31" />
-                    </div>
-                </a>
                 <div class="image_frame"></div>
                 <div id="image_container">
                     <div class='intro_infographic_mini'><a href='#infographic/perception'><img src='images/small_perception.png'></a></div>

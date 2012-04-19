@@ -352,18 +352,18 @@ $(document).ready(function(){
             $('.parallaxB').css(transformB);
             $('.parallaxC').css(transformC);
         }
+        if (e.pageY < 820) {
+            var newValue = (e.pageX) / window.innerWidth;
+            var newHour = Math.floor(newValue * 24);
 
-        var newValue = (e.pageX) / window.innerWidth;
-        var newHour = Math.floor(newValue * 24);
-
-        if (hour !== newHour) {
-            $('#map_overlay_hour_'+newHour).show();
-            $('#map_overlay_hour_'+hour).hide();
-            hour = newHour;
-            $('.intro_time_output').text(hour + ':00');
+            if (hour !== newHour) {
+                $('#map_overlay_hour_'+newHour).show();
+                $('#map_overlay_hour_'+hour).hide();
+                hour = newHour;
+                $('.intro_time_output').text(hour + ':00');
+            }
+            $('#map_overlay_darkness').css({'background-position': ((newValue+(-8/24)) * 800) + 'px -20px' });
         }
-        $('#map_overlay_darkness').css({'background-position': ((newValue+(-0/24)) * 800) + 'px -20px' });
-
         // $('#map_overlay_hour_'+hour).css({'-webkit-transform': 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)' });
         //document.getElementById('map_overlay_darkness').style.webkitTransform = 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)';
 
