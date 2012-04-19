@@ -6,13 +6,15 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>PageScroller: A Simple Page Scrolling Plugin</title>
-    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="./js/pagescroller.min.js"></script>
-    <script type="text/javascript" src="./js/underscore.js"></script>
-    <script type="text/javascript" src="./js/backbone.js"></script>
-    <!--<script type="text/javascript" src="./js/jquery.parallax.js"></script>-->
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/backbone.js"></script>
+    <script type='text/javascript' src='js/jquery.page-scroll.js' ></script>
+    <script type='text/javascript' src='js/polymaps.js' ></script>
+    <script type='text/javascript' src='js/heatmap_config.js' ></script>
+    <script type='text/javascript' src='js/heatmap.js' ></script>
     <script type="text/javascript">
 
     $(document).ready(function(){
@@ -32,12 +34,14 @@
                     { filename: 'Perception-03.png',        top: '-200px',  left: '54%', parallax: 'C' }
                 ],
                 sections: [
-                    { height:  650, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-                ]
+                    { height:  800, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1391, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2407, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3295, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 4640, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 4840, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ],
+                offset: 160
             },
             what: {
                 filename: 'info_whatweeat.jpg',
@@ -49,12 +53,14 @@
                     { filename: 'banner_what2.png', top: '310px',   left: '70.5%', parallax: 'C' }
                 ],
                 sections: [
-                    { height:  630, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-                ]
+                    { height:  800, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1440, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2317, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3450, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 3700, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 3950, caption: 'bla', color: 'rgba(0,161,180,0.7)'}
+                ],
+                offset: 260
             },
             where: {
                 filename: 'info_whereweeat.jpg',
@@ -68,12 +74,14 @@
 
                 ],
                 sections: [
-                    { height:  850, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-                ]
+                    { height:  1010, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1775, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 2355, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 2823, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3023, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3423, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ],
+                offset: 190
             },
 
             when: {
@@ -87,12 +95,15 @@
                     { filename: 'banner_whenFoodFront.png', top: '-150px',     left: '-20px', parallax: 'C' }
                 ],
                 sections: [
-                    { height:  660, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height:  670, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1015, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 1820, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 2575, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 3387, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3787, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                     { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-                ]
+                ],
+                offset: 0
             },
             friends: {
                 filename: 'info_eatingiscontagious.jpg',
@@ -104,12 +115,15 @@
                     { filename: 'banner_whoFood.png',      top: '-90px',     left: '-20px', parallax: 'C' },
                 ],
                 sections: [
-                    { height:  650, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
-                    { height: 1230, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 2120, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                    { height: 3060, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                    { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
-                ]
+                    { height:  750, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
+                    { height: 1090, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 1970, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 2695, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
+                    { height: 3160, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3360, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
+                    { height: 3550, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                ],
+                offset: 110
             }
         };
 
@@ -123,13 +137,21 @@
 
         var navLabel = new Array('1', '2', "3", '4', '5', '6', '7', '8', '9', '10');
         var cumulHeight = 0;
+        var lastInfographic = '';
         var curInfographic = '';
         var INFOGRAPHIC = infographics[curInfographic];
         var sectionHeight = 0;
 
+        var prevSection = 0;
+        var currentSection = 0;
+
         var $main = $('#main');
         var $wrapper = $('#wrapper');
         var $banner = $('#banner_main');
+        var $pageScroll = $('#pageScroll');
+        var $topNav = $('.topNav');
+        var $controls = $('#controls');
+
         var imgPATH = '../images/'
 
         ////////////////////////////////////////////////////////////////////////////////////
@@ -138,13 +160,18 @@
         //
 
         function createInfographicPage(aInfographic) {
+            lastInfographic = curInfographic;
             curInfographic = aInfographic;
             INFOGRAPHIC = infographics[aInfographic];
+
+            // Update nav bar
+            $('.nav_'+lastInfographic).removeClass('active');
+            $('.nav_'+curInfographic).addClass('active');
 
             $banner.fadeOut('fast').html('');
             $main.fadeOut('fast', function() {
                 $wrapper.html('').append('<div id="main"></div>');
-                $main = $('#main');
+                var $main = $('#main');
 
                 // Create banner
                 var _bn = INFOGRAPHIC.banner;
@@ -153,36 +180,63 @@
                 }
 
                 // Create image
-                $main.append('<div id="image"><div id="image_frame"></div><div id="image_container"><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
+                $main.append('<div id="image"><div class="image_frame"></div><div id="image_container"><img src="'+imgPATH+INFOGRAPHIC.filename+'"/></div></div>');
                 $('#image').css({'padding-top': INFOGRAPHIC.sections[0].height});
-                $('#image img').css({'margin-top': -INFOGRAPHIC.sections[0].height});
+                $('#image img').css({'margin-top': -INFOGRAPHIC.sections[0].height + INFOGRAPHIC.offset});
 
                 // Create sections
+                $pageScroll.html('');
                 for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
                     if (i === 0) { sectionHeight = INFOGRAPHIC.sections[i].height; }
                     else { sectionHeight = INFOGRAPHIC.sections[i].height - INFOGRAPHIC.sections[i-1].height; }
-                    $main.append('<div class="section" style="height: '+ sectionHeight +'px"></div>');
+                    $main.append('<div class="section section'+i+'" style="height: '+ sectionHeight +'px"></div>');
+
+                    // Create scroll targets
+                    $pageScroll.append('<li class="scrollNav scrollNav_2"><a href="#scrollTo/'+i+'">'+(i+1)+'</a></li>');
                 }
-                $main.append('<div class="section" style="height: 500px"><div class="shareThis">SHARE THIS</div></div>');
 
-                $main.pageScroller({ navigation: navLabel, scrollOffset: 200, onChange: changeSection });
+                // Add sharing box
+                $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="image_frame"></div><div id="image_container"><div class="shareThis">© Copyright 2012 Massive Health. All Rights Reserved.</div></div>');
 
-                // assigns "next" API function to button
-                $('.next').live('click', function(e){
-                    e.preventDefault();
-                    pageScroller.next();
+
+                $banner.fadeIn();
+                $main.fadeIn();
+                $controls.fadeIn();
+
+                $.pageScroll({
+                    target: $('.section0'),
+                    pushState: false
                 });
 
-                //assigns "prev" API function to button
-                $('.prev').live('click', function(e){
-                    e.preventDefault();
-                    pageScroller.prev();
-                });
+            });
+        }
+
+        function createPage(aPage) {
+
+            var _template = _.template($('#'+aPage+'-page').html());
+
+            lastInfographic = curInfographic;
+            curInfographic = aPage;
+
+            // Update nav bar
+            $('.nav_'+lastInfographic).removeClass('active');
+            $('.nav_'+curInfographic).addClass('active');
+            $controls.fadeOut();
+
+            $banner.fadeOut('fast').html('');
+            $main.fadeOut('fast', function() {
+                $wrapper.html('')
+                        .append(_template);
+
+                if(aPage === 'intro') {
+                    //createMap();
+                }
 
                 $banner.fadeIn();
                 $main.fadeIn();
             });
-        }
+
+        };
 
         /*  AVAILABLE OPTIONS:
          *  currentSection              starting position
@@ -195,19 +249,6 @@
          *  onChange                    callback: assign a function for when section changes
         */
 
-        function changeSection(e) {
-            var scrollY = window.scrollY;
-            var newColor = function ratchet() {
-                for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
-                    if (scrollY <= INFOGRAPHIC.sections[i].height) {
-                        return INFOGRAPHIC.sections[i].color;
-                    }
-                }
-            }();
-            $wrapper.css({'backgroundColor': newColor});
-            //console.log('changed section', scrollY, newColor);
-        };
-
         window.app.createInfographicPage = createInfographicPage;
 
         ////////////////////////////////////////////////////////////////////////////////////
@@ -218,51 +259,54 @@
         // Start router
         var App = Backbone.Router.extend({
 
-          routes: {
-            "":                     "home",    // #help
-            'infographic/:name': 'infographic'
-          },
-          home: function() {
-            app.navigate('/infographic/where', {trigger: true});
-          },
-          infographic: function(name) {
+        routes: {
+            '':                     'home',
+            'about':                'about',
+            'infographic/:name':    'infographic',
+            'scroll/:direction':    'scroll',
+            'scrollTo/:sectionNum': 'scrollTo'
+        },
+        home: function() {
+            //app.navigate('/infographic/where', {trigger: true});
+            createPage('intro');
+        },
+        about: function() {
+            createPage('about');
+        },
+        infographic: function(name) {
             //app.navigate('/#infographic/'+name, {trigger: true});
             createInfographicPage(name);
-            console.log('infographic', name);
-          }
+        },
+        scroll: function(direction) {
+            if (direction === 'up') {
+                var newSection = Math.max(0, currentSection - 1);
+            }
+            else if (direction === 'down') {
+                var newSection = Math.min(INFOGRAPHIC.sections.length, currentSection + 1)
+            }
+            $.pageScroll({
+                target: $('.section' + newSection),
+                pushState: false
+            });
+            app.navigate('infographic/'+curInfographic, {trigger: false, replace: true});
+        },
+        scrollTo: function(sectionNum) {
+            app.navigate('infographic/'+curInfographic, {trigger: false, replace: true});
+            $.pageScroll({
+                target: $('.section' + sectionNum),
+                pushState: false
+            });
+        }
+
+
 
         });
-        window.app = new App();
-        Backbone.history.start({pushState: true})
 
-        //createInfographicPage('perception');
-
-        var $topNav = $('.topNav');
-        $(window).scroll(function(e) {
-            var scrollY = e.currentTarget.scrollY;
-            if (scrollY > 700) {
-                $topNav.css({opacity: 0.5});
-            }
-            else {
-                $topNav.css({opacity: 1});
-            }
-            console.log(e.currentTarget.scrollY);
-        });
-
-
-        $(window).mousemove(function(e) {
-            if (window.scrollY < 1000) {
-            var newValue = (window.innerWidth/2 - e.pageX) / window.innerWidth;
-                $('.parallaxA').css({'-webkit-transform': 'translate3d('+ (newValue * 5) +'px, 0px, 0px)'})
-                $('.parallaxB').css({'-webkit-transform': 'translate3d('+ (newValue * 20) +'px, 0px, 0px)'})
-                $('.parallaxC').css({'-webkit-transform': 'translate3d('+ (newValue * 50) +'px, 0px, 0px)'})
-            }
-        });
-
-          // All navigation that is relative should be passed through the navigate
-          // method, to be processed by the router.  If the link has a data-bypass
-          // attribute, bypass the delegation completely.
-          $(document).on("click", "a:not([data-bypass])", function(evt) {
+        // Backbone routing shim courtesy of Backbone Boilerplate
+        // All navigation that is relative should be passed through the navigate
+        // method, to be processed by the router.  If the link has a data-bypass
+        // attribute, bypass the delegation completely.
+        $(document).on("click", "a:not([data-bypass]), a:not[.next]", function(evt) {
             // Get the anchor href and protcol
             var href = $(this).attr("href");
             var protocol = this.protocol + "//";
@@ -270,19 +314,179 @@
             // Ensure the protocol is not part of URL, meaning its relative.
             if (href && href.slice(0, protocol.length) !== protocol &&
                 href.indexOf("javascript:") !== 0) {
-              // Stop the default event to ensure the link will not cause a page
-              // refresh.
-              evt.preventDefault();
+                // Stop the default event to ensure the link will not cause a page
+                // refresh.
+                evt.preventDefault();
 
-              // `Backbone.history.navigate` is sufficient for all Routers and will
-              // trigger the correct events.  The Router's internal `navigate` method
-              // calls this anyways.
-              Backbone.history.navigate(href, true);
+                // `Backbone.history.navigate` is sufficient for all Routers and will
+                // trigger the correct events.  The Router's internal `navigate` method
+                // calls this anyways.
+                Backbone.history.navigate(href, true);
             }
-          });
+        });
 
+        window.app = new App();
+        Backbone.history.start();
+
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Listen for scrolling events
+        //
+        //
+
+        $(window).scroll(function(e) {
+            var scrollY = e.currentTarget.scrollY;
+            console.log(scrollY);
+            var getSection = function () {
+                for (var i=0; i<INFOGRAPHIC.sections.length; i++) {
+                    if (scrollY <= INFOGRAPHIC.sections[i].height - 40) {
+                        return i;
+                    }
+                }
+            };
+            // Fire change section function if we changed section
+            var newSection = getSection();
+            if (newSection !== currentSection) {
+                changeSection(newSection);
+            }
+        });
+
+        function changeSection(aNewSection) {
+            newSection = aNewSection || 0;
+            prevSection = currentSection;
+            currentSection = newSection;
+
+            // Change color
+            oldColor = INFOGRAPHIC.sections[prevSection].color;
+            newColor = INFOGRAPHIC.sections[currentSection].color;
+
+            if (oldColor !== newColor) {
+                $wrapper.css({'backgroundColor': newColor});
+            }
+
+            if (aNewSection !== 0) { $topNav.css({opacity: 0.5}); $controls.css({opacity: 0.25}); }
+            else { $topNav.css({opacity: 0.9}); $controls.css({opacity: 0.9}); }
+        };
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Parallax
+        //
+        //
+        var prefixes = ['-webkit-', '-moz-', '-o-', '-ms-', ''];
+        var hour = 0;
+        $(window).mousemove(function(e) {
+            if (window.scrollY < 1000) {
+                var newValue = (window.innerWidth/2 - e.pageX) / window.innerWidth;
+                transformA = {};
+                transformB = {};
+                transformC = {};
+
+                for (var i=0; i<prefixes.length; i++) {
+                    transformA[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 5) +'px, 0px, 0px)';
+                    transformB[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 20) +'px, 0px, 0px)';
+                    transformC[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 50) +'px, 0px, 0px)';
+                }
+                $('.parallaxA').css(transformA);
+                $('.parallaxB').css(transformB);
+                $('.parallaxC').css(transformC);
+            }
+
+            var newValue = (e.pageX) / window.innerWidth;
+            var newHour = Math.floor(newValue * 24);
+
+            if (hour !== newHour) {
+                $('#map_overlay_hour_'+newHour).show();
+                $('#map_overlay_hour_'+hour).hide();
+                hour = newHour;
+                $('.intro_time_output').text(hour + ':00');
+            }
+            $('#map_overlay_darkness').css({'background-position': ((newValue+(-12/24)) * 1320) });
+
+            // $('#map_overlay_hour_'+hour).css({'-webkit-transform': 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)' });
+            //document.getElementById('map_overlay_darkness').style.webkitTransform = 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)';
+
+        });
     });
 
+    </script>
+
+
+    <script type="text/template" id="intro-page">
+        <div id='main'>
+            <div class='intro_title'> How do we really eat? </div>
+            <div id='map' class='parallaxA'>
+            <div id='map_overlay_darkness' class='intro_map_overlay map_overlay_darkness' style="background-image: url('../images/darkness.png'); background-position: 680px;"></div>
+                <% for (var i=0; i<24; i++) {
+                    if (i<10) { j = '0' + i; }
+                    else { j = i; }
+                    %>
+                    <div id='map_overlay_hour_<%=i%>' class='intro_map_overlay map_overlay_hour' style="background-image: url('../images/map800/<%=j%>_hour.png');"></div>
+                <% } %>
+            </div>
+            <div class='section intro_dragger'> <div class='intro_time_output'>9:35</div> in London </div>
+            <div class="section intro_bottom">
+                <a href='#infographic/perception'><div class='section next_button intro_next parallaxB'>
+                    <img src="./images/icon_arrow-right.png" alt="" width="28" height="31" />
+                </div></a>
+                <div class="image_frame"></div>
+                <div id="image_container"></div>
+            </div>
+        </div>
+
+    </script>
+
+    <script type="text/template" id="about-page">
+    <div id='main'>
+        <div class='spacer'> </div>
+        <div class="image_frame"></div>
+        <div id="image_container">
+            <div class='about'>
+                <h1>Methodology</h1>
+                <h2>Behind the Data</h2>
+                <p>
+                The findings that are presented in these infographics are obtained from the Eatery (unless specified).  This data was obtained from over 7.68 million food ratings by Eatery users from over 50 countries over a span of 5 months.</p>
+
+                <h2>Eatery Findings and the Real World</h2>
+                <p>Data obtained from the Eatery is an accurate indicator of the healthiness of its users.  In fact, Eatery data on the average percentile of fit/fat ratings accurately predicts obesity levels of cities in the United States.  Furthermore, findings from the Eatery are in line with proven scientific research.  For example, the influence rate of food choices by friends matches closely with the obesity transmission rates <sup>[3]</sup> described by Christakis and Fowler.  Breakfast eating findings are also in line with research conducted on the effects of breakfast eating – that people who eat breakfast tend to eat less <sup>[4,7,8,9,10]</sup> and healthier throughout the day <sup>[5,6]</sup>. Additionally, as expected, controversial foods, such as coffee, diet soda, orange juice, and bacon are flagged with higher standard deviations from user ratings on the Eatery.</p>
+
+                <h2>People</h2>
+                <h3>Development:</h3>
+                <ul>
+                    <li>Aza Raskin</li>
+                    <li>Andrew J. Rosenthal</li>
+                    <li>Sylvia Cheng</li>
+                </ul>
+
+                <h3>Designers:</h3>
+                <ul>
+                    <li>Michael Jeter from iShotHim</li>
+                    <li>Raphael D’Amico</li>
+                </ul>
+
+                <h3>Engineers:</h3>
+                <ul>
+                    <li>Doug Soo</li>
+                    <li>Andrew Carman</li>
+                </ul>
+
+                <h2>References</h2>
+                <ol>
+
+                    <li>“Nutrition, Physical Activity and Obesity.” Centers for Disease Control and Prevention. Internet:  http://www.cdc.gov/Features/ObesityAndKids/, Oct 17, 2011 [Apr 18, 2012].</li>
+                    <li>“The United States of Diabetes: New Report Shows Half the Country Could Have Diabetes or Prediabetes at a cost of $3.35 Trillion by 2020.” UnitedHealth Group.  Internet: http://www.unitedhealthgroup.com/newsroom/news.aspx?id=36df663f-f24d-443f-9250-9dfdc97cedc5, Nov 23, 2012 [Apr 18, 2012].</li>
+                    <li>Christakis NA ,Fowler JH. The Spread of Obesity in a Large Social Network over 32 Years. New England Journal of Medicine. 2007; 357-370-9.</li>
+                    <li>Clark CA, Gardiner J, McBurney MI, Anderson S, Weatherspoon LJ, Henry DN, Hord NG. Effects of breakfast meal composition on second meal metabolic responses in adults with type 2 diabetes mellitus. Eur J Clin Nutr. 2006;60:1122–9.</li>
+                    <li>Isaksson H, Sundberg B, Åman P, Fredriksson H, Olsson J.  Whole grain rye porridge breakfast improves satiety compared to reﬁned wheat bread breakfast. Food & Nutrition Research. 2008; 52.</li>
+                    <li>Levine AS, Tallman JR, Grace MK, Parker SA, Billington CJ, Levitt MD. Effect of Breakfast Cereals on Short-term Food Intake.  American Journal of Clinical Nutrition. 1989;50: 1303-7.</li>
+                    <li>Liljeberg HG, Akerberg AK, Bjorck IM. Effect of the glycemic index and content of indigestible carbohydrates of cereal-based breakfast meals on glucose tolerance at lunch in healthy subjects. Am J Clin Nutr. 1999;69:647–55.</li>
+                    <li>Nestler JE, Barlascini CO, Clore JN, Blackard WG. Absorption characteristic of breakfast determines insulin sensitivity and carbohydrate tolerance for lunch. Diabetes Care. 1988;11:755–60.</li>
+                    <li>Pai S, Ghugre PS, Udipi SA. Satiety from rice-based, wheat-based and rice-pulse combination preparations. Appetite. 2005;44:263–71.</li>
+                    <li>Pasman WJ, Blokdijk VM, Bertina FM, Hopman WP, Hendriks HF. Effect of two breakfasts, different in carbohydrate composition, on hunger and satiety and mood in healthy men. Int J Obes Relat Metab Disord. 2003;27:663–8.</li>
+                </ol>
+            </div>
+        </div>
+        </div>
+    </div>
     </script>
 
 </head>
@@ -290,8 +494,9 @@
 <body>
 
     <div id="controls" class="light">
-        <a href="" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
-        <a href="" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
+        <a href="#scroll/up" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
+        <ul id="pageScroll" class="left"></ul>
+        <a href="#scroll/down" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
     </div>
 
     <div id="banner_wrapper">
@@ -302,23 +507,22 @@
 
     <div id="wrapper" class="dark">
         <div id="main">
-            <!-- <div id="image"><div id="image_frame"></div><div id="image_container"><img src='images/MH_Perceptionv3_960.jpg'/></div></div> -->
         </div><!-- [END] #main -->
+        </div>
     </div><!-- [END] #wrapper -->
 
-    <div id='footer'> </div>
 
-<div class="topNav white">
-    <ul style="display: block; ">
-        <li class="topNavLink topNavLink_0 active"><a href="#">Introduction</a></li>
-        <li class="topNavLink topNavLink_1"><a href="#infographic/perception">Perception</a></li>
-        <li class="topNavLink topNavLink_2"><a href="#infographic/what">What</a></li>
-        <li class="topNavLink topNavLink_3"><a href="#infographic/where">Where</a></li>
-        <li class="topNavLink topNavLink_4"><a href="#infographic/when">When</a></li>
-        <li class="topNavLink topNavLink_5"><a href="#infographic/friends">Friends</a></li>
-        <li class="colors white">
-    </ul>
-</div>
+    <div class="topNav white">
+        <ul style="display: block; ">
+            <li class="topNavLink nav_intro topNavLink_0"><a href="#">Introduction</a></li>
+            <li class="topNavLink nav_perception topNavLink_1"><a href="#infographic/perception">Perception?</a></li>
+            <li class="topNavLink nav_when topNavLink_4"><a href="#infographic/when">When?</a></li>
+            <li class="topNavLink nav_where topNavLink_3"><a href="#infographic/where">Where?</a></li>
+            <li class="topNavLink nav_what topNavLink_2"><a href="#infographic/what">What?</a></li>
+            <li class="topNavLink nav_friends topNavLink_5"><a href="#infographic/friends">Who?</a></li>
+            <li class="topNavLink nav_about nav_right"><a href="#about">About</a></li>
+        </ul>
+    </div>
 
 </body><!-- [END] body -->
 </html><!-- [END] html -->
