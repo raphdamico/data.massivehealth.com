@@ -153,8 +153,8 @@ $(document).ready(function(){
         $('.nav_'+lastInfographic).removeClass('active');
         $('.nav_'+curInfographic).addClass('active');
 
-        $banner.fadeOut('fast').html('');
-        $main.fadeOut('fast', function() {
+        $banner.hide().html('');
+        $main.fadeOut(0, function() {
             $wrapper.html('').append('<div id="main"></div>');
             var $main = $('#main');
 
@@ -185,8 +185,8 @@ $(document).ready(function(){
             $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="image_frame"></div><div id="image_container"><div class="shareThis">© Copyright 2012 Massive Health. All Rights Reserved.</div></div>');
 
 
-            $banner.fadeIn();
-            $main.fadeIn();
+            $banner.show();
+            $main.show();
 
             $.pageScroll({
                 target: $('.section0'),
