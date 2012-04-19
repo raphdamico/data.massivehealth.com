@@ -7,12 +7,12 @@ $(document).ready(function(){
     var infographics = {
         perception: {
             filename: 'info_perception.jpg',
-            patch: 'patch_perception',
+            patch: 'info_perception_patch.jpg',
             banner: [
-                { filename: 'Perception-01.png',        top: '-40px',   left: '-40px', parallax: 'A' },
-                { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%',   parallax: 'B' },
-                { filename: 'Perception-02-mirror.png', top: '-40px',   left: '76%',   parallax: 'A' },
-                { filename: 'Perception-03.png',        top: '-200px',  left: '54%',   parallax: 'C' }
+                { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'A' },
+                { filename: 'Perception-02-guy.png',    top: '-40px',   left: '76%', parallax: 'B' },
+                { filename: 'Perception-02-mirror.png', top: '-40px',   left: '76%', parallax: 'A' },
+                { filename: 'Perception-03.png',        top: '-200px',  left: '54%', parallax: 'C' }
             ],
             sections: [
                 { height:  800, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
@@ -26,12 +26,12 @@ $(document).ready(function(){
         },
         what: {
             filename: 'info_whatweeat.jpg',
-            patch: 'patch_what.jpg',
+            patch: 'info_whatweeat_patch.jpg',
             banner: [
-                { filename: 'banner_what4.png', top: '-70px',  left: '-9%',   parallax: 'A' },
-                { filename: 'banner_what1.png', top: '310px',  left: '71%',   parallax: 'B' },
+                { filename: 'banner_what4.png', top: '-70px',  left: '-9%', parallax: 'A' },
+                { filename: 'banner_what1.png', top: '310px',     left: '71%', parallax: 'B' },
                 { filename: 'banner_what3.png', top: '285px',  left: '93.5%', parallax: 'B' },
-                { filename: 'banner_what2.png', top: '310px',  left: '70.5%', parallax: 'C' }
+                { filename: 'banner_what2.png', top: '310px',   left: '70.5%', parallax: 'C' }
             ],
             sections: [
                 { height:  800, caption: 'bla', color: 'rgba(0,161,180,0.3)'},
@@ -45,7 +45,7 @@ $(document).ready(function(){
         },
         where: {
             filename: 'info_whereweeat.jpg',
-            patch: 'patch_where.jpg',
+            patch: 'info_whereweeat_patch.jpg',
             banner: [
                 { filename: 'banner_whereTitle.png',        top: '-80px',     left: '0px', parallax: 'C' },
                 { filename: 'banner_whereHalo.png',         top: '-80px',     left: '0px', parallax: 'B' },
@@ -67,7 +67,7 @@ $(document).ready(function(){
 
         when: {
             filename: 'info_whenweeat.jpg',
-            patch: '',
+            patch: 'info_whenweeat_patch.jpg',
             banner: [
                 { filename: 'banner_whenTitle.png',     top: '-90px',     left: '-20px', parallax: 'B' },
                 { filename: 'banner_whenGuys.png',      top: '-150px',     left: '-20px', parallax: 'A' },
@@ -88,7 +88,7 @@ $(document).ready(function(){
         },
         friends: {
             filename: 'info_eatingiscontagious.jpg',
-            patch: '',
+            patch: 'info_eatingiscontagious_patch.jpg',
             banner: [
                 { filename: 'banner_whoTitle.png',      top: '-90px',     left: '-20px', parallax: 'A' },
                 { filename: 'banner_whoPeeps.png',     top: '-90px',     left: '-20px', parallax: 'B' },
@@ -363,7 +363,7 @@ $(document).ready(function(){
             transformC = {};
 
             for (var i=0; i<prefixes.length; i++) {
-                transformA[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 5) +'px, 0px, 0px)';
+                transformA[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 5) +'px, 0px, 0px)';
                 transformB[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 20) +'px, 0px, 0px)';
                 transformC[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 50) +'px, 0px, 0px)';
             }
