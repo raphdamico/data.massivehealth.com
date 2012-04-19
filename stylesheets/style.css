@@ -18,7 +18,6 @@ body{
 	font-size: 14px;
 	line-height: 20px;
 	color: #333;
-	/*background-image: url('../images/bg.gif');*/
 	background-color: white;
 }
 
@@ -143,16 +142,11 @@ ul.unstyled {
 	overflow:hidden;
 	min-height: 100%;
 	background-image: -webkit-linear-gradient(top left, #EEE 0%, #FFF 100%);
-	/*background-color: rgba(0,161,180,0.3);*/
-	/*background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #FFF 100%);
-	background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #DDDDDD 100%);
-	background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #DDDDDD 100%);
-	background-image: -webkit-gradient(radial, center center, 0, center center, 501, color-stop(0, #FFFFFF), color-stop(1, #DDDDDD));
-	background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #FFFFFF 100%);	*/
-	/*-webkit-transition: background-color 0.25s ease-in-out;
-	-moz-transition: background-color 0.25s ease-in-out;
-	-o-transition: background-color 0.25s ease-in-out;
-	transition: background-color 0.25s ease-in-out;*/
+	background-image: -ms-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -moz-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -o-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #EEEEEE), color-stop(1, #FFFFFF));
+	background-image: -webkit-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);	
 	/*padding-top: 160px;*/
 }
 
