@@ -362,7 +362,7 @@ $(document).ready(function(){
             hour = newHour;
             $('.intro_time_output').text(hour + ':00');
         }
-        $('#map_overlay_darkness').css({'background-position': ((newValue+(-12/24)) * 1320) });
+        $('#map_overlay_darkness').css({'background-position': ((newValue+(-12/24)) * 1320) + 'px -20px' });
 
         // $('#map_overlay_hour_'+hour).css({'-webkit-transform': 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)' });
         //document.getElementById('map_overlay_darkness').style.webkitTransform = 'translate3d('+((newValue+(-12/24)) * 1320)+'px,0,0)';

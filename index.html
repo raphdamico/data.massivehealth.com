@@ -19,24 +19,35 @@
 
     <script type="text/template" id="intro-page">
         <div id='main'>
-            <div class='intro_title'> How do we </br>really eat? </div>
-            <div id='map' class='parallaxA'>
-            <div id='map_overlay_landmass' class='intro_map_overlay' style="background-image: url('../images/map800/map.png'); background-position: 0px -20px;"></div>
-            <div id='map_overlay_darkness' class='intro_map_overlay map_overlay_darkness' style="background-image: url('../images/map800/darkness.png'); background-position: 680px -20px;"></div>
-                <% for (var i=0; i<24; i++) {
-                    if (i<10) { j = '0' + i; }
-                    else { j = i; }
-                    %>
+            <div class='intro_title'>
+                <div id='map' class='parallaxA'>
+                    <div id='map_overlay_landmass' class='intro_map_overlay' style="background-image: url('../images/map800/map.png'); background-position: 0px -20px;"></div>
+                    <div id='map_overlay_darkness' class='intro_map_overlay map_overlay_darkness' style="background-image: url('../images/map800/darkness.png'); background-position: 680px -0px;"></div>
+                    <% for (var i=0; i<24; i++) {
+                        if (i<10) { j = '0' + i; }
+                        else { j = i; }
+                        %>
                     <div id='map_overlay_hour_<%=i%>' class='intro_map_overlay map_overlay_hour' style="background-image: url('../images/map800/<%=j%>_hour.png');"></div>
-                <% } %>
+                    <% } %>
+                    <div class='section map_label_bottom'> Eating healthiness over 24 hours</br> <em>Visualization of over 500,000 foods</em> </div>
+                    <div class='section map_label_top'> <div class='intro_time_output'>9:35</div> in London </div>
+                </div>
             </div>
+
             <div class="section intro_bottom">
-                <div class='section intro_dragger'> <div class='intro_time_output'>9:35</div> in London </div>
-                <a href='#infographic/perception'><div class='section next_button intro_next parallaxB'>
-                    <img src="./images/icon_arrow-right.png" alt="" width="28" height="31" />
-                </div></a>
+                <a href='#infographic/perception'>
+                    <div class='section next_button intro_next parallaxB'>
+                        <img src="./images/icon_arrow-right.png" alt="" width="28" height="31" />
+                    </div>
+                </a>
                 <div class="image_frame"></div>
-                <div id="image_container"></div>
+                <div id="image_container">
+                    <div class='intro_infographic_mini'><a href='#infographic/perception'><img src='images/small_perception.png'></a></div>
+                    <div class='intro_infographic_mini'><a href='#infographic/when'><img src='images/small_what.png'/></div>
+                    <div class='intro_infographic_mini'><a href='#infographic/where'><img src='images/small_when.png'/></div>
+                    <div class='intro_infographic_mini'><a href='#infographic/what'><img src='images/small_where.png'/></div>
+                    <div class='intro_infographic_mini last'><a href='#infographic/who'><img src='images/small_who.png'/></div>
+                </div>
             </div>
         </div>
 
@@ -100,7 +111,7 @@
 
 <body>
 
-    
+
 
     <div id="banner_wrapper">
         <div id="banner_main">

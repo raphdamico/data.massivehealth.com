@@ -172,13 +172,14 @@ ul.unstyled {
 /************************************************************/
 
 .intro_title {
-	font-size: 120px;
-	line-height: 120px;
 	color: white;
-	/*position: absolute;*/
+	background-image: url('../images/intro_banner.png');
 	margin-top: 80px;
 	margin-bottom: 40px;
 	pointer-events: none;
+	width: 982px;
+	height: 492px;
+	padding-top: 220px;
 }
 
 .next_button {
@@ -218,12 +219,13 @@ ul.unstyled {
 	height: 100%;
 }
 #map {
+	background-color: rgba(200,200,200,0.2);
 	position: relative;
 	width: 800px;
 	height: 400px;
 	overflow: hidden;
 	border: 10px solid white;
-	margin-left: 70px;
+	margin-left: 80px;
 	margin-bottom: 80px;
 }
 .intro_map_overlay {
@@ -239,16 +241,37 @@ ul.unstyled {
 /*	position: fixed;
 	bottom: 0px;*/
 }
-.intro_dragger {
-/*	margin-left: 80px;
+.map_label_top {
+	opacity: 0.8;
 	position: fixed;
-	bottom: 60px;*/
-	position: absolute;
-	margin-top: -100px;
+	left: 10px;
+	top: 10px;
+}
+.map_label_bottom {
+	opacity: 0.8;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
 }
 .intro_time_output {
 	font-size: 20px;
+}
 
+.intro_infographic_mini {
+	margin-right: 10px;
+	float: left;
+	width: 173px;
+	padding: 5px 5px 0;
+	font-size: 11px;
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-webkit-transition: -webkit-transform 0.2s ease-in-out;
+}
+.intro_infographic_mini.last {
+	padding-right: 0 !important;
+}
+.intro_infographic_mini:hover {
+	-webkit-transform: translate3d(0px, -20px, 0px);
 }
 
 /************************************************************/
