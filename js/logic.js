@@ -326,13 +326,13 @@ $(document).ready(function(){
             }
         };
         // Fire change section function if we changed section
-        var newSection = getSection();
+        /*var newSection = getSection();
         if (newSection !== currentSection) {
             changeSection(newSection);
-        }
+        }*/
     });
 
-    function changeSection(aNewSection) {
+    /*function changeSection(aNewSection) {
         newSection = aNewSection || 0;
         prevSection = currentSection;
         currentSection = newSection;
@@ -342,12 +342,12 @@ $(document).ready(function(){
         newColor = INFOGRAPHIC.sections[currentSection].color;
 
         if (oldColor !== newColor) {
-            $wrapper.css({'backgroundColor': newColor});
+            //$wrapper.css({'backgroundColor': newColor});
         }
 
         if (aNewSection !== 0) { $topNav.css({opacity: 0.5}); $controls.css({opacity: 0.25}); }
         else { $topNav.css({opacity: 0.9}); $controls.css({opacity: 0.9}); }
-    };
+    };*/
 
     ////////////////////////////////////////////////////////////////////////////////////
     // Parallax
@@ -363,9 +363,9 @@ $(document).ready(function(){
             transformC = {};
 
             for (var i=0; i<prefixes.length; i++) {
-                transformA[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 5) +'px, 0px, 0px)';
-                transformB[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 20) +'px, 0px, 0px)';
-                transformC[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 50) +'px, 0px, 0px)';
+                transformA[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 5) +'px, 0px, 0px)';
+                transformB[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 20) +'px, 0px, 0px)';
+                transformC[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 50) +'px, 0px, 0px)';
             }
             $('.parallaxA').css(transformA);
             $('.parallaxB').css(transformB);
