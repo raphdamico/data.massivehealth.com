@@ -6,7 +6,7 @@ $(document).ready(function(){
     //
     var infographics = {
         perception: {
-            filename: 'info_perception.jpg',
+            filename: 'info_perception.png',
             patch: 'patch_perception.jpg',
             patchOffset: -35,
             banner: [
@@ -26,7 +26,7 @@ $(document).ready(function(){
             offset: 160
         },
         what: {
-            filename: 'info_whatweeat.jpg',
+            filename: 'info_whatweeat.png',
             patch: 'patch_what.jpg',
             patchOffset:-17,
             banner: [
@@ -46,7 +46,7 @@ $(document).ready(function(){
             offset: 260
         },
         where: {
-            filename: 'info_whereweeat.jpg',
+            filename: 'info_whereweeat.png',
             patch: 'patch_where.jpg',
             patchOffset: -26,
             banner: [
@@ -69,7 +69,7 @@ $(document).ready(function(){
         },
 
         when: {
-            filename: 'info_whenweeat.jpg',
+            filename: 'info_whenweeat.png',
             patch: '',
             patchOffset: 0,
             banner: [
@@ -91,7 +91,7 @@ $(document).ready(function(){
             offset: 0
         },
         friends: {
-            filename: 'info_eatingiscontagious.jpg',
+            filename: 'info_eatingiscontagious.png',
             patch: '',
             patchOffset: 0,
             banner: [
@@ -153,8 +153,8 @@ $(document).ready(function(){
         $('.nav_'+lastInfographic).removeClass('active');
         $('.nav_'+curInfographic).addClass('active');
 
-        $banner.fadeOut('fast').html('');
-        $main.fadeOut('fast', function() {
+        $banner.hide().html('');
+        $main.fadeOut(0, function() {
             $wrapper.html('').append('<div id="main"></div>');
             var $main = $('#main');
 
@@ -182,11 +182,11 @@ $(document).ready(function(){
             }
 
             // Add sharing box
-            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="image_frame"></div><div id="image_container"><div class="shareThis">© Copyright 2012 Massive Health. All Rights Reserved.</div></div>');
+            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;top:-75px;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
 
 
-            $banner.fadeIn();
-            $main.fadeIn();
+            $banner.show();
+            $main.show();
 
             $.pageScroll({
                 target: $('.section0'),

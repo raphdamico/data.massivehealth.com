@@ -284,6 +284,42 @@ ul.unstyled {
 .about {
 	margin: 15px;
 }
+
+.about h1 {
+	font-size: 80px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin-bottom: 80px;
+	margin-top: 70px;
+}
+
+.about h2{
+	font-size: 40px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin-bottom: 40px;
+	margin-top: 80px;
+}
+
+.about p{
+	font-size: 25px;
+	color: #666;
+	line-height: 38px;
+	margin-bottom: 30px;
+}
+
+.about sup{
+	font-size: 10px;
+}
+
+.about li{
+	margin-bottom: 5px;
+}
+
+.about a{
+	color: #555;
+}
+
 /************************************************************/
 /*	IMAGE (image_)
 /************************************************************/
@@ -405,22 +441,18 @@ ul.unstyled {
 }
 
 .white .topNavLink.active a{
-	background: #ccc;
-	color: #333;
-	background: #ffffff; /* Old browsers */
-	background: -moz-linear-gradient(top,  #fcfcfc 3%, #eeeeee 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#fcfcfc), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #fcfcfc 3%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #fcfcfc 3%,#eeeeee 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #fcfcfc 3%,#eeeeee 100%); /* IE10+ */
-	background: linear-gradient(top,  #fcfcfc 3%,#eeeeee 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
-	border-color: #222;
+	background:white !important;
+	font-weight:bold;
+	-moz-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
 }
 
 .white .topNavLink a:hover{
 	color: #444444;
 	text-decoration: none;
+	-moz-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);	
+	background-color: rgba(255,255,255,.4);
 }
 
 .nav_right {
