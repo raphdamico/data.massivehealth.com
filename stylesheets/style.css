@@ -141,13 +141,12 @@ ul.unstyled {
 	width:100%;
 	overflow:hidden;
 	min-height: 100%;
-	background-image: -webkit-linear-gradient(top left, #EEE 0%, #FFF 100%);
-	background-image: -ms-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
-	background-image: -moz-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
-	background-image: -o-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #EEEEEE), color-stop(1, #FFFFFF));
-	background-image: -webkit-linear-gradient(top left, #EEEEEE 0%, #FFFFFF 100%);	
-	/*padding-top: 160px;*/
+	background-image: -webkit-linear-gradient(top left, #C9E9F1 0%, #D7D9E8 100%);
+	background-image: -ms-linear-gradient(top left, #C9E9F1 0%, #D7D9E8 100%);
+	background-image: -moz-linear-gradient(top left, #C9E9F1 0%, #D7D9E8 100%);
+	background-image: -o-linear-gradient(top left, #C9E9F1 0%, #D7D9E8 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #C9E9F1), color-stop(1, #D7D9E8));
+	background-image: -webkit-linear-gradient(top left, #C9E9F1 0%, #D7D9E8 100%);
 }
 
 * html #wrapper{
