@@ -8,6 +8,7 @@ $(document).ready(function(){
         perception: {
             filename: 'info_perception.png',
             patch: 'patch_perception.jpg',
+            description: 'We eat less healthy than we think.',
             patchOffset: -35,
             banner: [
                 { filename: 'Perception-01.png',        top: '-40px',   left: '0px', parallax: 'A' },
@@ -28,6 +29,7 @@ $(document).ready(function(){
         what: {
             filename: 'info_whatweeat.png',
             patch: 'patch_what.jpg',
+            description: 'What we eat matters.',
             patchOffset:-17,
             banner: [
                 { filename: 'banner_what4.png', top: '-70px',  left: '-9%', parallax: 'A' },
@@ -49,6 +51,7 @@ $(document).ready(function(){
             filename: 'info_whereweeat.png',
             patch: 'patch_where.jpg',
             patchOffset: -26,
+            description: 'Where we eat matters.',
             banner: [
                 { filename: 'banner_whereTitle.png',        top: '-80px',     left: '0px', parallax: 'C' },
                 { filename: 'banner_whereHalo.png',         top: '-80px',     left: '0px', parallax: 'B' },
@@ -72,6 +75,7 @@ $(document).ready(function(){
             filename: 'info_whenweeat.png',
             patch: '',
             patchOffset: 0,
+            description: 'Who eats what?',
             banner: [
                 { filename: 'banner_whenTitle.png',     top: '-90px',     left: '-20px', parallax: 'B' },
                 { filename: 'banner_whenGuys.png',      top: '-150px',     left: '-20px', parallax: 'A' },
@@ -94,6 +98,7 @@ $(document).ready(function(){
             filename: 'info_eatingiscontagious.png',
             patch: '',
             patchOffset: 0,
+            description: 'Eating habits are contagious.',
             banner: [
                 { filename: 'banner_whoTitle.png',      top: '-90px',     left: '-20px', parallax: 'A' },
                 { filename: 'banner_whoPeeps.png',     top: '-90px',     left: '-20px', parallax: 'B' },
@@ -182,8 +187,7 @@ $(document).ready(function(){
             }
 
             var facebook_like = '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=272119109590" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:30px; " allowTransparency="true"></iframe>';
-            var tweet = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://data.massivehealth.com/#infographic/perception">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
-            var pinterest = '<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&media=http%3A%2F%2Fdata.massivehealth.com%2Fimages%2F'+INFOGRAPHIC.filename+'" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>';
+            var pinterest = '<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&media=http%3A%2F%2Fdata.massivehealth.com%2Fimages%2F'+INFOGRAPHIC.filename+'&description='+encodeURIComponent(INFOGRAPHIC.description)+'" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>';
             // Add sharing box
             $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="share_buttons">'+pinterest+facebook_like+'</div><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
 
@@ -346,7 +350,7 @@ $(document).ready(function(){
             transformC = {};
 
             for (var i=0; i<prefixes.length; i++) {
-                transformA[prefixes[i]+'transform'] = 'translate3d('+ (newValue * 5) +'px, 0px, 0px)';
+                transformA[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 5) +'px, 0px, 0px)';
                 transformB[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 20) +'px, 0px, 0px)';
                 transformC[prefixes[i]+'transform'] = 'translate3d('+ Math.floor(newValue * 50) +'px, 0px, 0px)';
             }
