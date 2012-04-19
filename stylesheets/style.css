@@ -172,11 +172,12 @@ ul.unstyled {
 /************************************************************/
 
 .intro_title {
-	font-size: 40px;
+	font-size: 120px;
+	line-height: 120px;
 	color: white;
 	/*position: absolute;*/
 	margin-top: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	pointer-events: none;
 }
 
@@ -223,6 +224,7 @@ ul.unstyled {
 	overflow: hidden;
 	border: 10px solid white;
 	margin-left: 70px;
+	margin-bottom: 80px;
 }
 .intro_map_overlay {
 	margin-top: -65px;
@@ -234,16 +236,19 @@ ul.unstyled {
 	display: none;
 }
 .intro_bottom {
-	position: fixed;
-	bottom: 0px;
+/*	position: fixed;
+	bottom: 0px;*/
 }
 .intro_dragger {
-	margin-left: 80px;
+/*	margin-left: 80px;
 	position: fixed;
-	bottom: 60px;
+	bottom: 60px;*/
+	position: absolute;
+	margin-top: -100px;
 }
 .intro_time_output {
 	font-size: 20px;
+
 }
 
 /************************************************************/
