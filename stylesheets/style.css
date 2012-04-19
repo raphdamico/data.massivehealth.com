@@ -173,11 +173,12 @@ ul.unstyled {
 
 .intro_title {
 	color: white;
-	background-image: url('../images/intro_banner2.png');
+	background-image: url('../images/intro_banner3.png');
 	background-repeat: no-repeat;
 	margin-top: 80px;
 	margin-bottom: 30px;
 	pointer-events: none;
+	margin-left: 2px;
 	width: 982px;
 	height: 420px;
 	padding-top: 206px;
@@ -256,6 +257,7 @@ ul.unstyled {
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
+	line-height: 17px;
 }
 .map_label_emphasis {
 	font-size: 10px;
@@ -273,12 +275,20 @@ ul.unstyled {
 	background-color: white;
 	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
 	-webkit-transition: -webkit-transform 0.1s ease-out;
+	-moz-transition: -webkit-transform 0.1s ease-out;
+	-o-transition: -webkit-transform 0.1s ease-out;
+	-ms-transition: -webkit-transform 0.1s ease-out;
+	transition: -webkit-transform 0.1s ease-out;
 }
 .intro_infographic_mini.last {
 	padding-right: 0 !important;
 }
 .intro_infographic_mini:hover {
 	-webkit-transform: translate3d(0px, -20px, 0px);
+	-moz-transition: -webkit-transform 0.1s ease-out;
+	-o-transition: -webkit-transform 0.1s ease-out;
+	-ms-transition: -webkit-transform 0.1s ease-out;
+	transition: -webkit-transform 0.1s ease-out;
 }
 
 /************************************************************/
@@ -289,7 +299,7 @@ ul.unstyled {
 	height: 200px;
 }
 .about {
-	margin: 15px;
+	margin: 15px 55px 0;
 }
 
 .about h1 {
@@ -297,21 +307,21 @@ ul.unstyled {
 	font-variant: small-caps;
 	text-transform: lowercase;
 	margin-bottom: 80px;
-	margin-top: 70px;
+	margin-top: 50px;
 }
 
 .about h2{
-	font-size: 40px;
+	font-size: 36px;
 	font-variant: small-caps;
 	text-transform: lowercase;
-	margin-bottom: 40px;
-	margin-top: 80px;
+	margin-bottom: 25px;
+	margin-top: 50px;
 }
 
 .about p{
-	font-size: 25px;
+	font-size: 18px;
 	color: #666;
-	line-height: 38px;
+	line-height: 32px;
 	margin-bottom: 30px;
 }
 
@@ -360,8 +370,11 @@ ul.unstyled {
 	background-repeat: no-repeat;
 }
 
-.shareThis {
-
+.share_buttons {
+}
+.share_buttons * {
+	float: left;
+	margin-right: 10px;
 }
 /************************************************************/
 /*	PARALLAX (topNav)
@@ -521,6 +534,10 @@ li.scrollNav.active a{
 	width: 20px;
 	text-align: center;
 	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
 }
 
 #controls:hover {

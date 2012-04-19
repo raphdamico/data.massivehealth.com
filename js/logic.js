@@ -181,9 +181,11 @@ $(document).ready(function(){
                 $pageScroll.append('<li class="scrollNav scrollNav_2"><a href="#scrollTo/'+i+'">'+(i+1)+'</a></li>');
             }
 
+            var facebook_like = '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=272119109590" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:30px; " allowTransparency="true"></iframe>';
+            var tweet = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://data.massivehealth.com/#infographic/perception">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+            var pinterest = '<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&media=http%3A%2F%2Fdata.massivehealth.com%2Fimages%2F'+INFOGRAPHIC.filename+'" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>';
             // Add sharing box
-            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;top:-75px;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
-
+            $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="share_buttons">'+pinterest+facebook_like+'</div><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
 
             $banner.show();
             $main.show();
