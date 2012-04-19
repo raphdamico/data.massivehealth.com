@@ -238,18 +238,18 @@ ul.unstyled {
 	display: none;
 }
 .intro_bottom {
-/*	position: fixed;
+	/*position: fixed;
 	bottom: 0px;*/
 }
 .map_label_top {
 	opacity: 0.8;
-	position: fixed;
+	position: absolute;
 	left: 10px;
 	top: 10px;
 }
 .map_label_bottom {
 	opacity: 0.8;
-	position: fixed;
+	position: absolute;
 	left: 10px;
 	bottom: 10px;
 }
@@ -451,7 +451,7 @@ ul.unstyled {
 	color: #444444;
 	text-decoration: none;
 	-moz-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
-	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);	
+	-webkit-box-shadow: 0px -1px 0px rgba(0, 0, 0, .2);
 	background-color: rgba(255,255,255,.4);
 }
 
