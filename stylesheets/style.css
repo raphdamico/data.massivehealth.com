@@ -261,6 +261,42 @@ ul.unstyled {
 .about {
 	margin: 15px;
 }
+
+.about h1 {
+	font-size: 80px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin-bottom: 80px;
+	margin-top: 70px;
+}
+
+.about h2{
+	font-size: 40px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	margin-bottom: 40px;
+	margin-top: 80px;
+}
+
+.about p{
+	font-size: 25px;
+	color: #666;
+	line-height: 38px;
+	margin-bottom: 30px;
+}
+
+.about sup{
+	font-size: 10px;
+}
+
+.about li{
+	margin-bottom: 5px;
+}
+
+.about a{
+	color: #555;
+}
+
 /************************************************************/
 /*	IMAGE (image_)
 /************************************************************/
