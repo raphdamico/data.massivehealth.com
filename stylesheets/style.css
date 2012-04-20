@@ -164,6 +164,7 @@ ul.unstyled {
 .section{
 	padding: 0px;
 	margin: 0px;
+	clear: both;
 }
 
 
@@ -184,12 +185,36 @@ ul.unstyled {
 	padding-top: 206px;
 }
 
-.next_button {
-	padding: 40px;
+.bottom_button_prev {
+	margin-left: 370px;
+	-webkit-border-radius: 15px 0px 0px 15px;
+	-moz-border-radius: 15px 0px 0px 15px;
+	border-radius: 15px 0px 0px 15px;
+}
+.bottom_button_next {
+	-webkit-border-radius: 0px 15px 15px 0px;
+	-moz-border-radius: 0px 15px 15px 0px;
+	border-radius: 0px 15px 15px 0px;
+}
+.bottom_button_prev:hover {
+	margin-left: 350px;
+	padding-left: 30px;
+}
+.bottom_button_next:hover {
+	padding-left: 30px;
+}
+.bottom_button {
+	float: left;
+	margin-bottom: 30px;
+	width: 34px;
+	height: 34px;
+	padding: 20px;
 
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+	-webkit-transition: all 0.1s ease-out;
+	-moz-transition: all 0.1s ease-out;
+	-o-transition: all 0.1s ease-out;
+	-ms-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
 
 	-webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .3);
 	-moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .3);
@@ -205,7 +230,20 @@ ul.unstyled {
 	background: -ms-linear-gradient(top,  #f8f6f6 0%,#e8e7e7 100%); /* IE10+ */
 	background: linear-gradient(top,  #f8f6f6 0%,#e8e7e7 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f6f6', endColorstr='#e8e7e7',GradientType=0 ); /* IE6-9 */
-
+}
+.prev_button {
+	background-image: url('../images/icon_arrow-left.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 31px;
+	height: 31px;
+}
+.next_button {
+	background-image: url('../images/icon_arrow-right.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 31px;
+	height: 31px;
 }
 
 .intro_next {
@@ -236,6 +274,15 @@ ul.unstyled {
 	/*background-image: url('../images/darkness.png');*/
 	height: 800px;
 }
+.map_legend {
+	font-size: 11px;
+	font-weight: bold;
+	line-height:14px;
+}
+.map_legend_good {	color: #9acb36;}
+.map_legend_medium {color: #ccc135;}
+.map_legend_poor {	color: #c9491a;}
+
 .map_overlay_hour {
 	display: none;
 }
@@ -245,6 +292,13 @@ ul.unstyled {
 .intro_bottom {
 	/*position: fixed;
 	bottom: 0px;*/
+}
+.map_label_top_right {
+	opacity: 0.7;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	text-align: right;
 }
 .map_label_top {
 	opacity: 0.7;

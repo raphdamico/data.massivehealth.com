@@ -22,7 +22,7 @@ $(document).ready(function(){
                 { height: 2407, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                 { height: 3295, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
                 { height: 4640, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                { height: 4840, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                { height: 4754, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
             ],
             offset: 160
         },
@@ -43,7 +43,7 @@ $(document).ready(function(){
                 { height: 2317, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                 { height: 3450, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
                 { height: 3700, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
-                { height: 3950, caption: 'bla', color: 'rgba(0,161,180,0.7)'}
+                { height: 3800, caption: 'bla', color: 'rgba(0,161,180,0.7)'}
             ],
             offset: 260
         },
@@ -66,7 +66,7 @@ $(document).ready(function(){
                 { height: 2355, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
                 { height: 2823, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                 { height: 3023, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                { height: 3423, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                { height: 3330, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
             ],
             offset: 190
         },
@@ -90,11 +90,11 @@ $(document).ready(function(){
                 { height: 2575, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
                 { height: 3387, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                 { height: 3787, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                { height: 4050, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                { height: 3931, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
             ],
             offset: 0
         },
-        friends: {
+        who: {
             filename: 'info_eatingiscontagious.png',
             patch: '',
             patchOffset: 0,
@@ -112,7 +112,7 @@ $(document).ready(function(){
                 { height: 2695, caption: 'bla', color: 'rgba(0,161,180,0.7)'},
                 { height: 3160, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
                 { height: 3360, caption: 'bla', color: 'rgba(0,123,0,0.6)'},
-                { height: 3550, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
+                { height: 3500, caption: 'bla', color: 'rgba(0,123,0,0.6)'}
             ],
             offset: 110
         }
@@ -143,6 +143,24 @@ $(document).ready(function(){
     var $topNav = $('.topNav');
 
     var imgPATH = '../images/'
+    var infographicsOrder = ['perception', 'when', 'where', 'what', 'who'];
+
+    var getPrevNextInfographicName = function(aDirection) {
+        var newIndex = 0;
+        var curIndex = infographicsOrder.indexOf(curInfographic);
+        console.log(curIndex);
+        var numInfographics = infographicsOrder.length;
+        if (aDirection === 'next') {
+            if (curIndex >= numInfographics-1) { newIndex = 0; }
+            else { newIndex = curIndex + 1; }
+        }
+        if (aDirection === 'prev') {
+            console.log(curIndex)
+            if (curIndex <= 0) { newIndex = numInfographics-1; }
+            else { newIndex = curIndex - 1; }
+        }
+        return infographicsOrder[newIndex];
+    };
 
     ////////////////////////////////////////////////////////////////////////////////////
     // Create sections
@@ -188,8 +206,10 @@ $(document).ready(function(){
 
             var facebook_like = '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=272119109590" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:30px; " allowTransparency="true"></iframe>';
             var pinterest = '<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdata.massivehealth.com%2F%23infographic%2F'+curInfographic+'&media=http%3A%2F%2Fdata.massivehealth.com%2Fimages%2F'+INFOGRAPHIC.filename+'&description='+encodeURIComponent(INFOGRAPHIC.description)+'" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>';
+
             // Add sharing box
             $main.append('<div class="section section'+INFOGRAPHIC.sections.length+'"><div class="share_buttons">'+pinterest+facebook_like+'</div><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="position:relative;float:right;"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>');
+            $main.append('<div class="section"><a href="#infographic/'+getPrevNextInfographicName('prev')+'"><div class="bottom_button bottom_button_prev"><div class="prev_button"></div></div></a> <a href="#infographic/'+getPrevNextInfographicName('next')+'"><div class="bottom_button bottom_button_next"><div class="next_button"></div></div></a></div>')
 
             $banner.show();
             $main.show();
@@ -265,6 +285,10 @@ $(document).ready(function(){
     },
     infographic: function(name) {
         //app.navigate('/#infographic/'+name, {trigger: true});
+        if (name === 'friends') {
+            name = 'who';
+            app.navigate('infographic/who', {trigger: false, replace: true});
+        }
         createInfographicPage(name);
     },
     scroll: function(direction) {
